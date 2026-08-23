@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# Hiring4U-Version-03
-=======
-# 🚀 Hiring4U – Deployable Job Service
+# 🚀 Hiring4U_Version:03 – Deployable Job Service
 
 Hiring4U is a role-based job portal built with Spring Boot and MySQL. It now includes a responsive candidate job experience, a safe public jobs API, Docker deployment assets, health checks, and an EC2 deployment workflow.
 
