@@ -1,3 +1,13 @@
+name: Hiring4U Version:3  CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -26,7 +36,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t arif318/hiring4u:latest .
+        run: docker build -t arif318/hiring4u:03 .
 
       - name: Push Docker image
-        run: docker push arif318/hiring4u:latest
+        run: docker push arif318/hiring4u:03
