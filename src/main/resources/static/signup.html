@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Create an account | Hiring4U</title><link rel="stylesheet" href="/css/atelier.css"><link rel="stylesheet" href="/css/atelier-auth.css"></head>
+<body class="auth-page"><div class="auth-shell"><section class="auth-art"><a class="brand" href="/">Hiring<span>4</span>U</a><div class="paint-stroke s1"></div><div class="paint-stroke s2"></div><div style="position:relative;margin-top:18vh"><div class="kicker">02 · Identity</div><h1>Choose your<br>role in the story.</h1><p>Candidate or recruiter, each account follows its own domain workflow while sharing the same secure backend.</p><pre class="code-etch">CANDIDATE
+  └─ PROFILE
+  └─ RESUME
+  └─ APPLICATION
+
+RECRUITER
+  └─ COMPANY
+  └─ JOB POST
+  └─ CANDIDATES</pre></div></section>
+<section class="auth-form"><div class="auth-card"><div class="kicker">Create an identity</div><h2>Join Hiring4U</h2><p>Choose the role you need. The form changes without leaving this page.</p>
+<form id="signup-form" novalidate><div class="choice"><div><input id="candidate-role" name="account-role" type="radio" value="candidate" checked><label for="candidate-role"><strong>Candidate</strong><small>Find, save and apply.</small></label></div><div><input id="recruiter-role" name="account-role" type="radio" value="recruiter"><label for="recruiter-role"><strong>Recruiter</strong><small>Publish roles and hire.</small></label></div></div>
+<section data-role="candidate"><div class="field"><label>Full name</label><input id="full-name" required></div><div class="field"><label>Phone</label><input id="phone-number"></div><div class="field"><label>Location</label><input id="candidate-location"></div><div class="field"><label>Date of birth</label><input id="dob" type="date"></div><div class="field"><label>Resume</label><input id="candidate-resume" type="file" accept=".pdf,.doc,.docx" required></div></section>
+<section data-role="recruiter" hidden><div class="field"><label>Company name</label><input id="company-name"></div><div class="field"><label>HR / Recruiter name</label><input id="hr-name"></div><div class="field"><label>HR phone</label><input id="hr-phone"></div><div class="field"><label>Location</label><input id="hr-location"></div><div class="field"><label>Company website</label><input id="weblink" type="url"></div></section>
+<div class="field"><label>Email</label><input id="email" type="email" required></div><div class="field"><label>Password</label><input id="new-password" type="password" minlength="8" required></div><div class="field"><label>Confirm password</label><input id="confirm-password" type="password" minlength="8" required></div><button id="signup-button" class="btn wine" style="width:100%">Create account →</button><p id="signup-feedback" class="feedback"></p></form><div class="auth-foot"><a href="/login.html">Already registered?</a> · <a href="/">Back to canvas</a></div></div></section></div><script src="/assets/jobentry/js/signup.js"></script></body></html>

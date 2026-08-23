@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hiring4U — Engineering the next opportunity</title>
+<link rel="stylesheet" href="/css/atelier.css">
+<style>
+.home{min-height:calc(100vh - 76px);position:relative;overflow:hidden}
+.hero{position:relative;min-height:610px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px}
+.hero h1{font:400 clamp(58px,8vw,108px)/.88 Georgia,serif;letter-spacing:-5px;margin:18px 0 24px;max-width:700px}
+.hero p{max-width:560px;color:var(--muted);font-size:16px;line-height:1.8}
+.hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.paint.a{width:560px;height:150px;background:#d4a15a;left:-170px;top:120px;transform:rotate(-12deg)}
+.paint.b{width:430px;height:120px;background:#718b8f;right:-160px;top:60px;transform:rotate(20deg)}
+.paint.c{width:330px;height:90px;background:#9d5147;right:5%;bottom:30px;transform:rotate(-8deg)}
+.arch{height:510px;position:relative}
+.canvas-art{position:absolute;inset:20px 0 0 20px;border:1px solid var(--line);background:rgba(255,252,244,.48);transform:rotate(1.5deg);box-shadow:var(--shadow)}
+.canvas-art:before{content:"";position:absolute;inset:28px;border:1px dashed rgba(36,34,29,.18)}
+.node{position:absolute;padding:14px 17px;border:1px solid var(--ink);background:#f7f0e3;box-shadow:8px 10px 0 rgba(36,34,29,.08);min-width:150px}
+.node b{display:block;font:400 23px Georgia,serif}.node small{color:var(--muted)}
+.n1{left:7%;top:11%;transform:rotate(-4deg)}.n2{right:8%;top:22%;transform:rotate(4deg)}.n3{left:17%;bottom:22%;transform:rotate(3deg)}.n4{right:15%;bottom:11%;transform:rotate(-5deg)}
+.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:190px;height:190px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#efe1c5;border:2px solid var(--ink);box-shadow:inset 0 0 0 10px rgba(255,255,255,.25)}
+.core strong{font:400 28px Georgia,serif}.core span{font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.flow{position:absolute;height:1px;background:var(--ink);transform-origin:left}
+.f1{width:145px;left:31%;top:35%;transform:rotate(-13deg)}.f2{width:145px;left:60%;top:39%;transform:rotate(13deg)}.f3{width:150px;left:34%;top:65%;transform:rotate(14deg)}.f4{width:150px;left:58%;top:62%;transform:rotate(-13deg)}
+.section{padding:80px 0}.section-head{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:28px}.section h2{font:400 45px Georgia,serif;margin:0}.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tech{padding:25px;min-height:200px;position:relative}.tech:nth-child(2){transform:translateY(20px) rotate(1deg)}.tech:nth-child(3){transform:rotate(-1deg)}.tech h3{font:400 29px Georgia,serif;margin:45px 0 10px}.tech p{color:var(--muted);line-height:1.6}.tech .num{position:absolute;right:20px;top:20px;color:var(--wine);font:400 28px Georgia,serif}
+.jobs{display:grid;gap:14px}.job{display:grid;grid-template-columns:60px 1fr auto;gap:20px;align-items:center;padding:20px}.mark{width:54px;height:54px;border:1px solid var(--ink);display:grid;place-items:center;font:400 22px Georgia,serif;background:#efe2c8}.job h3{font:400 23px Georgia,serif;margin:0 0 4px}.job p{margin:0;color:var(--muted);font-size:13px}.skills{margin-top:9px;color:#625c50;font-size:12px}.job button{white-space:nowrap}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.arch{height:430px}.tech-grid{grid-template-columns:1fr}.tech:nth-child(2){transform:none}.job{grid-template-columns:52px 1fr}.job button{grid-column:2;width:max-content}}
+
+.job-search{padding:18px;margin:0 0 26px;position:relative;overflow:hidden}.job-search:before{content:"";position:absolute;left:-10%;top:0;width:38%;height:3px;background:#d4a15a;transform:rotate(-1deg)}
+.search-line{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.search-main{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(255,252,244,.72);padding:0 15px;min-height:52px}.search-main span{font:30px Georgia,serif;color:var(--wine)}.search-main input{border:0;outline:0;background:transparent;width:100%;font:15px Georgia,serif;color:var(--ink)}
+.filter-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:12px}.filter-grid label{display:grid;gap:6px}.filter-grid label>span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.filter-grid input,.filter-grid select{width:100%;border:1px solid var(--line);background:rgba(255,252,244,.55);padding:11px 10px;outline:0;color:var(--ink);font:12px Inter,system-ui,sans-serif}.filter-grid input:focus,.filter-grid select:focus,.search-main:focus-within{border-color:var(--wine);box-shadow:0 0 0 2px rgba(122,52,52,.08)}
+.search-footer{display:flex;justify-content:space-between;align-items:center;margin-top:13px;font-size:11px;color:var(--muted)}.clear-search{border:0;background:transparent;color:var(--wine);font:11px Inter,system-ui,sans-serif;cursor:pointer}.clear-search:hover{text-decoration:underline}.job-search.busy{opacity:.72}.job-search.busy:after{content:"Searching…";position:absolute;right:18px;top:7px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--wine)}
+@media(max-width:1050px){.filter-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:700px){.search-line{grid-template-columns:1fr}.filter-grid{grid-template-columns:1fr 1fr}.search-footer{align-items:flex-start;gap:10px}}@media(max-width:480px){.filter-grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<nav class="atelier-nav"><div class="nav-inner"><a class="brand" href="/">Hiring<span>4</span>U</a>
+<div class="nav-links"><a href="#jobs">Opportunities</a><a href="#craft">Engineering</a><a href="/profile.html">Profile</a><a href="/post-job.html" class="nav-pill">Post a role</a></div>
+</div></nav>
+<main class="home">
+<div class="paint a"></div><div class="paint b"></div><div class="paint c"></div>
+<section class="canvas hero">
+<div><div class="kicker">A hiring system, built like software</div><h1>Find the role.<br>Build the future.</h1><p>Hiring4U connects candidates and recruiters through a full-stack hiring workflow — from discovery and authentication to applications, profiles and job publishing.</p><div class="hero-actions"><a class="btn wine" href="#jobs">Explore live roles</a><a class="btn alt" href="/signup.html">Create an account</a></div></div>
+<div class="arch"><div class="canvas-art"></div><div class="node n1"><small>01 · Interface</small><b>HTML / CSS / JS</b></div><div class="node n2"><small>02 · Backend</small><b>Spring Boot</b></div><div class="node n3"><small>03 · Data</small><b>MySQL + JPA</b></div><div class="node n4"><small>04 · Delivery</small><b>Docker</b></div><div class="core"><div><span>Project core</span><br><strong>Hiring4U</strong></div></div><i class="flow f1"></i><i class="flow f2"></i><i class="flow f3"></i><i class="flow f4"></i></div>
+</section>
+<section id="craft" class="canvas section"><div class="section-head"><div><div class="kicker">The engineering palette</div><h2>What powers the canvas</h2></div><span class="kicker">01 — 06</span></div>
+<div class="tech-grid"><article class="tech paper-card"><span class="num">01</span><h3>Spring Boot</h3><p>REST controllers, services, repositories, validation and application flow form the backend spine.</p></article>
+<article class="tech paper-card"><span class="num">02</span><h3>MySQL + JPA</h3><p>Entities, repositories and Hibernate/JPA map hiring data into persistent relational storage.</p></article>
+<article class="tech paper-card"><span class="num">03</span><h3>Security</h3><p>Spring Security, roles, password hashing and reset tokens protect candidate and recruiter workflows.</p></article>
+<article class="tech paper-card"><span class="num">04</span><h3>Docker</h3><p>The application is packaged into a reproducible container for deployment and networked runtime.</p></article>
+<article class="tech paper-card"><span class="num">05</span><h3>JavaScript</h3><p>Client-side fetch calls connect the visual interface to live backend APIs without page reloads.</p></article>
+<article class="tech paper-card"><span class="num">06</span><h3>Testing</h3><p>Service and controller tests provide regression protection around core hiring operations.</p></article></div></section>
+<section id="jobs" class="canvas section"><div class="section-head"><div><div class="kicker">Live data · Search studio</div><h2>Open opportunities</h2></div><a class="kicker" href="/login.html">Candidate login →</a></div>
+<div class="job-search paper-card">
+  <div class="search-line">
+    <label class="search-main"><span>⌕</span><input id="job-search" type="search" placeholder="Search role, skill, company or keyword…" autocomplete="off"></label>
+    <button id="job-search-button" class="btn wine" type="button">Search</button>
+  </div>
+  <div class="filter-grid">
+    <label><span>Role / skill</span><input id="job-role" type="text" placeholder="Java, React, Spring…"></label>
+    <label><span>Location</span><input id="job-location" type="text" placeholder="Pune, Mumbai, Remote…"></label>
+    <label><span>Minimum CTC</span><input id="job-min-ctc" type="number" min="0" step="10000" placeholder="₹ 500000"></label>
+    <label><span>Maximum CTC</span><input id="job-max-ctc" type="number" min="0" step="10000" placeholder="₹ 1500000"></label>
+    <label><span>Posted</span><select id="job-posted"><option value="">Any time</option><option value="1">Last 24 hours</option><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="90">Last 90 days</option></select></label>
+    <label><span>Sort by</span><select id="job-sort"><option value="recent">Most recent</option><option value="ctc_desc">Highest CTC</option><option value="ctc_asc">Lowest CTC</option><option value="title_asc">Role A–Z</option><option value="location_asc">Location A–Z</option></select></label>
+  </div>
+  <div class="search-footer"><span id="job-filter-summary">All opportunities</span><button id="job-clear" class="clear-search" type="button">Clear filters ×</button></div>
+</div>
+<div id="live-jobs-list" class="jobs"><div class="job paper-card"><div class="mark">…</div><div><h3>Loading the live canvas</h3><p>Fetching jobs from the Hiring4U backend.</p></div></div></div><p id="job-feedback" class="feedback"></p></section>
+</main>
+<script src="/js/app.js"></script>
+</body></html>
