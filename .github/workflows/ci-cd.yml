@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t hiring4u:03 .
+        run: docker build -t arif318/hiring4u:03 .
 
       - name: Push Docker image
-        run: docker push hiring4u:03
+        run: docker push arif318/hiring4u:03
