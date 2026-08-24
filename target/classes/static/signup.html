@@ -1,5 +1,20 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Create an account | Hiring4U</title><link rel="stylesheet" href="/css/atelier.css"><link rel="stylesheet" href="/css/atelier-auth.css"></head>
-<body class="auth-page"><div class="auth-shell"><section class="auth-art"><a class="brand" href="/">Hiring<span>4</span>U</a><div class="paint-stroke s1"></div><div class="paint-stroke s2"></div><div style="position:relative;margin-top:18vh"><div class="kicker">02 · Identity</div><h1>Choose your<br>role in the story.</h1><p>Candidate or recruiter, each account follows its own domain workflow while sharing the same secure backend.</p><pre class="code-etch">CANDIDATE
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Create an account | Hiring4U</title>
+  <link rel="stylesheet" href="/css/atelier.css"><link rel="stylesheet" href="/css/atelier-auth.css">
+</head>
+<body class="auth-page">
+  <div class="auth-shell">
+    <section class="auth-art">
+      <a class="brand" href="/">Hiring<span>4</span>U</a><div class="paint-stroke s1"></div>
+      <div class="paint-stroke s2"></div>
+      <div style="position:relative;margin-top:18vh">
+        <div class="kicker">02 · Identity</div>
+      <h1>Choose your<br>role in the story.</h1>
+      <p>Candidate or recruiter, each account follows its own domain workflow while sharing the same secure backend.</p>
+      <pre class="code-etch">CANDIDATE
   └─ PROFILE
   └─ RESUME
   └─ APPLICATION
@@ -8,8 +23,104 @@ RECRUITER
   └─ COMPANY
   └─ JOB POST
   └─ CANDIDATES</pre></div></section>
-<section class="auth-form"><div class="auth-card"><div class="kicker">Create an identity</div><h2>Join Hiring4U</h2><p>Choose the role you need. The form changes without leaving this page.</p>
-<form id="signup-form" novalidate><div class="choice"><div><input id="candidate-role" name="account-role" type="radio" value="candidate" checked><label for="candidate-role"><strong>Candidate</strong><small>Find, save and apply.</small></label></div><div><input id="recruiter-role" name="account-role" type="radio" value="recruiter"><label for="recruiter-role"><strong>Recruiter</strong><small>Publish roles and hire.</small></label></div></div>
-<section data-role="candidate"><div class="field"><label>Full name</label><input id="full-name" required></div><div class="field"><label>Phone</label><input id="phone-number"></div><div class="field"><label>Location</label><input id="candidate-location"></div><div class="field"><label>Date of birth</label><input id="dob" type="date"></div><div class="field"><label>Resume</label><input id="candidate-resume" type="file" accept=".pdf,.doc,.docx" required></div></section>
-<section data-role="recruiter" hidden><div class="field"><label>Company name</label><input id="company-name"></div><div class="field"><label>HR / Recruiter name</label><input id="hr-name"></div><div class="field"><label>HR phone</label><input id="hr-phone"></div><div class="field"><label>Location</label><input id="hr-location"></div><div class="field"><label>Company website</label><input id="weblink" type="url"></div></section>
-<div class="field"><label>Email</label><input id="email" type="email" required></div><div class="field"><label>Password</label><input id="new-password" type="password" minlength="8" required></div><div class="field"><label>Confirm password</label><input id="confirm-password" type="password" minlength="8" required></div><button id="signup-button" class="btn wine" style="width:100%">Create account →</button><p id="signup-feedback" class="feedback"></p></form><div class="auth-foot"><a href="/login.html">Already registered?</a> · <a href="/">Back to canvas</a></div></div></section></div><script src="/assets/jobentry/js/signup.js"></script></body></html>
+<section class="auth-form">
+  <div class="auth-card">
+    <div class="kicker">Create an identity</div>
+    <h2>Join Hiring4U</h2>
+    <p>Choose the role you need. The form changes without leaving this page.</p>
+<form id="signup-form" novalidate>
+  <div class="role-switch" role="tablist" aria-label="Choose account type">
+    <button type="button"
+            class="role-option active"
+            data-role="candidate"
+            role="tab"
+            aria-selected="true">
+        <span class="role-title">Candidate</span>
+        <span class="role-description">Find roles, save and apply.</span>
+    </button>
+    <button type="button"
+            class="role-option"
+            data-role="recruiter"
+            role="tab"
+            aria-selected="false">
+        <span class="role-title">Recruiter</span>
+        <span class="role-description">Publish roles and hire.</span>
+    </button>
+</div>
+
+<input type="hidden" id="role" name="role" value="CANDIDATE">
+<section data-role="candidate">
+  <div class="field">
+    <label>Full name</label>
+    <input id="full-name" required>
+  </div>
+<div class="field">
+  <label>Phone</label>
+  <input id="phone-number">
+</div>
+  <div class="field">
+    <label>Location</label>
+    <input id="candidate-location">
+  </div>
+  <div class="field">
+    <label>Resume</label>
+    <input id="candidate-resume" type="file" accept=".pdf,.doc,.docx" required>
+</div>
+</section>
+<section data-role="recruiter" hidden>
+  <div class="field">
+    <label>Company name</label>
+    <input id="company-name">
+  </div>
+  <div class="field">
+    <label>HR / Recruiter name</label>
+    <input id="hr-name">
+  </div>
+  <div class="field">
+    <label>HR phone</label>
+    <input id="hr-phone">
+  </div>
+  <div class="field">
+    <label>Location</label>
+    <input id="hr-location">
+  </div>
+</section>
+<div class="field">
+  <label>Email</label>
+  <input id="email" type="email" required>
+</div>
+<div class="field">
+  <label>Password</label>
+  <input id="new-password" type="password" minlength="8" required>
+</div>
+<div class="field">
+  <label>Confirm password</label>
+  <input id="confirm-password" type="password" minlength="8" required>
+</div>
+<button id="signup-button" class="btn wine" style="width:100%">Create account →</button>
+<p id="signup-feedback" class="feedback"></p>
+</form>
+<div class="auth-foot" style="display:flex;align-items:center;justify-content:space-between;gap:18px;">
+  <a href="/login.html">Already registered?</a>
+  <div class="social-login social-login-signup" aria-label="Social login options">
+  <a href="/oauth2/authorization/google" aria-label="Continue with Google" title="Continue with Google">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.55-.2-2.27H12v4.3h6.44a5.5 5.5 0 0 1-2.39 3.61v3h3.87c2.27-2.09 3.57-5.17 3.57-8.64z"/>
+      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.07 7.93-2.9l-3.87-3c-1.07.72-2.44 1.15-4.06 1.15-3.13 0-5.78-2.11-6.73-4.95H1.27v3.09A12 12 0 0 0 12 24z"/>
+      <path fill="#FBBC05" d="M5.27 14.3A7.2 7.2 0 0 1 4.9 12c0-.8.14-1.57.37-2.3V6.61H1.27A12 12 0 0 0 0 12c0 1.94.46 3.78 1.27 5.39l4-3.09z"/>
+      <path fill="#EA4335" d="M12 4.75c1.76 0 3.34.61 4.59 1.8l3.44-3.44C17.95 1.11 15.24 0 12 0A12 12 0 0 0 1.27 6.61l4 3.09C6.22 6.86 8.87 4.75 12 4.75z"/>
+    </svg>
+  </a>
+  <a href="/oauth2/authorization/linkedin" aria-label="Continue with LinkedIn" title="Continue with LinkedIn">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#0A66C2" d="M20.45 20.45h-3.56v-5.58c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.54 9h3.56v11.45H3.54V9z"/>
+    </svg>
+  </a>
+  </div>
+</div>
+</div>
+</section>
+</div>
+<script src="/assets/jobentry/js/signup.js"></script>
+</body>
+</html>

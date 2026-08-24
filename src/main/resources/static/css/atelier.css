@@ -15,12 +15,34 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;ba
 .canvas{width:min(1220px,calc(100% - 40px));margin:auto}
 .paint{position:absolute;border-radius:50%;filter:blur(.2px);opacity:.55;pointer-events:none}
 .paper-card{background:rgba(255,252,244,.7);border:1px solid var(--line);box-shadow:var(--shadow)}
-.kicker{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--wine);font-weight:800}
+.kicker{
+    font-size:12px;
+    letter-spacing:.28em;text-transform:uppercase;
+    color:#ff0000;
+}
 .serif{font-family:Georgia,serif;font-weight:400}
 .btn{border:1px solid var(--ink);padding:11px 17px;background:var(--ink);color:#fff;cursor:pointer;border-radius:2px}
 .btn.alt{background:transparent;color:var(--ink)}.btn.wine{background:var(--wine);border-color:var(--wine)}
-.field{display:grid;gap:7px;margin-bottom:18px}.field label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800}
-.field input,.field textarea,.field select{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;padding:10px 2px;outline:0;color:var(--ink)}
+.field {
+    display:grid;
+    gap:7px;
+    margin-bottom:14px
+}
+.field label{
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);font-weight:800
+}
+.field input,.field textarea,.field select{
+    width:100%;
+    border:0;
+    border-bottom:1px solid var(--line);
+    background:transparent;
+    padding:4px 2px;
+    outline:0;
+    color:var(--ink)
+}
 .field textarea{min-height:100px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--wine)}
-.feedback{min-height:24px;font-size:13px}.feedback.success{color:#3f6d4b}.feedback.error{color:var(--wine)}
+.feedback{min-height:0px;font-size:13px}.feedback.success{color:#3f6d4b}.feedback.error{color:var(--wine)}
 @media(max-width:760px){.nav-inner{height:66px;width:min(100% - 28px,1220px)}.nav-links{display:none}.canvas{width:min(100% - 28px,1220px)}}

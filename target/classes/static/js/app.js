@@ -71,4 +71,23 @@ list?.addEventListener("click",async e=>{
  try{const me=await fetch("/api/auth/me",{headers:{Accept:"application/json"}});if(!me.ok){location.href="/login.html";return}const p=await me.json();if(p.role!=="CANDIDATE"){feedback.textContent="Only candidate accounts can apply.";return}b.disabled=true;b.textContent="Applying…";const r=await fetch("/candidate/apply",{method:"POST",headers:{"Content-Type":"application/json",Accept:"text/plain"},body:JSON.stringify({jobId:b.dataset.apply})});feedback.textContent=await r.text();b.textContent=r.ok?"Applied":"Apply →";b.disabled=!r.ok}catch(_){feedback.textContent="Application could not be submitted."}
 });
 load();
+
+
+document.querySelectorAll(".role-option").forEach(option => {
+    option.addEventListener("click", () => {
+
+        document.querySelectorAll(".role-option").forEach(item => {
+            item.classList.remove("active");
+            item.setAttribute("aria-selected", "false");
+        });
+
+        option.classList.add("active");
+        option.setAttribute("aria-selected", "true");
+
+        const role = option.dataset.role;
+
+        document.getElementById("role").value =
+            role === "recruiter" ? "RECRUITER" : "CANDIDATE";
+    });
+});
 })();
